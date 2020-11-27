@@ -1,6 +1,8 @@
 import * as debug from "debug";
 import * as React from "react";
 
+import { HelloComponent } from "./HelloComponent";
+
 const mainDebugger: debug.Debug = debug.debug("react").extend("AppComponent");
 
 interface IAppComponentProps {
@@ -19,6 +21,7 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
     <div>
       Hello compiler '{props.compiler}' and framework '{props.framework}' from
       Function Component
+      <HelloComponent name="React training" />
     </div>
   );
 };
