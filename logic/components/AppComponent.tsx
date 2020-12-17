@@ -3,6 +3,7 @@ import * as React from "react";
 
 import { ConditionalComponent } from "./ConditionalComponent";
 import { ListComponent } from "./ListComponent";
+import { Rendering1Component } from "./Rendering1Component";
 
 const mainDebugger: debug.Debugger = debug
   .debug("react")
@@ -21,6 +22,8 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
   mainDebugger("AppComponent function");
 
   const listNames: string[] = ["Jon", "Michael", "Paul"];
+  const listNumbers: number[] = [2, 4, 6, 8, 10];
+  const doubleList: boolean = false;
 
   return (
     <div>
@@ -37,7 +40,9 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
       />
       <hr />
       <ListComponent names={listNames} />
-      <hr/>
+      <hr />
+      <Rendering1Component double={doubleList} numbers={listNumbers} />
+      <hr />
     </div>
   );
 };
