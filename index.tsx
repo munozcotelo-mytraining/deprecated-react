@@ -11,7 +11,7 @@ import * as ReactDOM from "react-dom";
 // import { AppComponent } from "./logic/components/AppComponent.class";
 import { AppComponent as AppComponentFunction } from "./logic/components/AppComponent";
 
-const mainDebugger: debug.Debug = debug.debug("react").extend("main");
+const mainDebugger: debug.Debugger = debug.debug("react").extend("main");
 
 mainDebugger("Start app");
 

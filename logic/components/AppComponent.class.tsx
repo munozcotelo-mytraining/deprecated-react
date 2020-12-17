@@ -1,7 +1,9 @@
 import * as debug from "debug";
 import * as React from "react";
 
-const mainDebugger: debug.Debug = debug.debug("react").extend("AppComponent");
+const mainDebugger: debug.Debugger = debug
+  .debug("react")
+  .extend("AppComponent");
 
 interface IAppComponentProps {
   compiler?: string;

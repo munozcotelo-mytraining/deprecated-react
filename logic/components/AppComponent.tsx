@@ -2,8 +2,11 @@ import * as debug from "debug";
 import * as React from "react";
 
 import { ConditionalComponent } from "./ConditionalComponent";
+import { ListComponent } from "./ListComponent";
 
-const mainDebugger: debug.Debug = debug.debug("react").extend("AppComponent");
+const mainDebugger: debug.Debugger = debug
+  .debug("react")
+  .extend("AppComponent");
 
 interface IAppComponentProps {
   compiler?: string;
@@ -17,10 +20,13 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
 
   mainDebugger("AppComponent function");
 
+  const listNames: string[] = ["Jon", "Michael", "Paul"];
+
   return (
     <div>
       Hello compiler '{props.compiler}' and framework '{props.framework}' from
       Function Component
+      <hr />
       <ConditionalComponent
         name="John"
         showName={true}
@@ -29,6 +35,9 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
         adress="Main Street"
         showAdress={true}
       />
+      <hr />
+      <ListComponent names={listNames} />
+      <hr/>
     </div>
   );
 };

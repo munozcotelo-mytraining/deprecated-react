@@ -1,7 +1,7 @@
 import * as debug from "debug";
 import * as React from "react";
 
-const mainDebugger: debug.Debug = debug
+const mainDebugger: debug.Debugger = debug
   .debug("react")
   .extend("ConditionalComponent");
 
