@@ -1,5 +1,8 @@
 import * as debug from "debug";
 import * as React from "react";
+import * as uuid from "uuid";
+
+import { INameDTO } from "./../../dto/INameDTO.class";
 
 import { ConditionalComponent } from "./ConditionalComponent";
 import { ListComponent } from "./ListComponent";
@@ -20,7 +23,11 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
 
   mainDebugger("AppComponent function");
 
-  const listNames: string[] = ["Jon", "Michael", "Paul"];
+  const listNames: INameDTO[] = [
+    { id: uuid.v4(), name: "Jon" },
+    { id: uuid.v4(), name: "Paul" },
+    { id: uuid.v4(), name: "Michael" }
+  ];
 
   return (
     <div>
@@ -37,7 +44,7 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
       />
       <hr />
       <ListComponent names={listNames} />
-      <hr/>
+      <hr />
     </div>
   );
 };
