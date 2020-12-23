@@ -6,6 +6,7 @@ import { INameDTO } from "./../../dto/INameDTO.class";
 
 import { ConditionalComponent } from "./ConditionalComponent";
 import { ListComponent } from "./ListComponent";
+import { StateComponent } from "./StateComponent.class";
 
 const mainDebugger: debug.Debugger = debug
   .debug("react")
@@ -44,6 +45,8 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
       />
       <hr />
       <ListComponent names={listNames} />
+      <hr />
+      <StateComponent direction="upa" />
       <hr />
     </div>
   );
