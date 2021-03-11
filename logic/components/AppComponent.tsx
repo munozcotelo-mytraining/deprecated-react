@@ -7,6 +7,7 @@ import { INameDTO } from "./../../dto/INameDTO.class";
 import { ConditionalComponent } from "./ConditionalComponent";
 import { ListComponent } from "./ListComponent";
 import { StateComponent } from "./StateComponent.class";
+import { StateExerciseComponent } from "./StateExerciseComponent.class";
 
 const mainDebugger: debug.Debugger = debug
   .debug("react")
@@ -47,6 +48,8 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
       <ListComponent names={listNames} />
       <hr />
       <StateComponent direction="upa" />
+      <hr />
+      <StateExerciseComponent amount={3} initial={10} />
       <hr />
     </div>
   );
