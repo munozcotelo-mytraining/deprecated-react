@@ -8,6 +8,7 @@ import { ConditionalComponent } from "./ConditionalComponent";
 import { ListComponent } from "./ListComponent";
 import { StateComponent } from "./StateComponent.class";
 import { EventsComponent } from "./EventsComponent.class";
+import { ExerciseEventsComponent } from "./ExerciseEventsComponent.class";
 
 const mainDebugger: debug.Debugger = debug
   .debug("react")
@@ -50,6 +51,8 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
       <StateComponent direction="upa" />
       <hr />
       <EventsComponent />
+      <hr />
+      <ExerciseEventsComponent />
       <hr />
     </div>
   );
