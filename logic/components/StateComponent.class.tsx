@@ -3,7 +3,7 @@ import * as React from "react";
 
 const mainDebugger: debug.Debugger = debug
   .debug("react")
-  .extend("StateComponent");
+  .extend("StateComponentsssss");
 
 interface IStateComponentProps {
   direction?: string;
@@ -83,7 +83,7 @@ class StateComponent extends React.Component<
      * Es decir, el componente se renderiza cada vez
      */
 
-    mainDebugger("StateComponent render");
+    //mainDebugger("StateComponent render");
 
     return (
       <div>
@@ -91,7 +91,7 @@ class StateComponent extends React.Component<
         <p>Counter (each 2 seconds): {me.state.counter}</p>
         <p>
           <button onClick={me.handleClick.bind(me)}>Click me!!</button>
-          <p>Random value: {me.state.random}</p>
+          <span>Random value: {me.state.random}</span>
         </p>
       </div>
     );
