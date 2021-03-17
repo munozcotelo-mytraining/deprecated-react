@@ -9,6 +9,7 @@ import { ListComponent } from "./ListComponent";
 import { StateComponent } from "./StateComponent.class";
 import { EventsComponent } from "./EventsComponent.class";
 import { HooksComponent } from "./HooksComponent";
+import { ExerciseHooksComponent } from "./ExerciseHooksComponent";
 
 const mainDebugger: debug.Debugger = debug
   .debug("react")
@@ -32,27 +33,46 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
     { id: uuid.v4(), name: "Michael" }
   ];
 
+  const [property, setProperty]: [
+    string,
+    React.Dispatch<string>
+  ] = React.useState("A");
+
+  function propertyClickA(): void {
+    setProperty("A");
+  }
+
+  function propertyClickB(): void {
+    setProperty("B");
+  }
+
   return (
     <div>
-      Hello compiler '{props.compiler}' and framework '{props.framework}' from
-      Function Component
-      <hr />
-      <ConditionalComponent
+      {/*Hello compiler '{props.compiler}' and framework '{props.framework}' from*/}
+      {/*Function Component*/}
+      {/*<hr />*/}
+      {/*<ConditionalComponent
         name="John"
         showName={true}
         surname="Doe"
         showSurname={true}
         adress="Main Street"
         showAdress={true}
-      />
-      <hr />
-      <ListComponent names={listNames} />
-      <hr />
-      <StateComponent direction="upa" />
-      <hr />
-      <EventsComponent />
-      <hr />
-      <HooksComponent />
+      />*/}
+      {/*<hr />*/}
+      {/*<ListComponent names={listNames} />*/}
+      {/*<hr />*/}
+      {/*<StateComponent direction="upa" />*/}
+      {/*<hr />*/}
+      {/*<EventsComponent />*/}
+      {/*<hr />*/}
+      {/*<HooksComponent />*/}
+      {/*<hr />*/}
+
+      <button onClick={propertyClickA}>Set 'A'</button>
+      <button onClick={propertyClickB}>Set 'B'</button>
+
+      <ExerciseHooksComponent theProperty={property} />
       <hr />
     </div>
   );
