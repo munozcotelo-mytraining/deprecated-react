@@ -44,6 +44,25 @@ const HooksComponent: (props: {}) => React.ReactElement = (props: {}) => {
     mainDebugger("Me renderizo cuando cambia el 'contador' o la 'suma'");
   }, [contador, suma]);
 
+  React.useEffect(() => {
+    /* Peticion que no se cancela */
+    fetch("https://cat-fact.herokuapp.com/facts")
+      .then(response => response.json())
+      .then(data => console.info(data))
+      .catch(error => console.error(error));
+
+    /* Ejemplo de como cancelar una peticion */
+    const controller: AbortController = new AbortController();
+    const signal: AbortSignal = controller.signal;
+
+    fetch("https://cat-fact.herokuapp.com/facts", { signal })
+      .then(response => response.json())
+      .then(data => console.info(data))
+      .catch(error => console.error(error));
+
+    controller.abort();
+  }, []);
+
   function handleClickContador() {
     setContador(contador + 1);
   }
