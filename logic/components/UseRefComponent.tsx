@@ -8,13 +8,13 @@ const mainDebugger: debug.Debugger = debug
 import { ForwardRefComponent } from "./common/ForwardRefComponent";
 
 const UseRefComponent: (props: {}) => React.ReactElement = (props: {}) => {
-    const myReference: React.MutableRefObject<HTMLInputElement> = React.useRef<HTMLInputElement>(
+  const myReference: React.MutableRefObject<HTMLInputElement> = React.useRef<HTMLInputElement>(
     null
   );
 
   const refToComponent: React.MutableRefObject<
     React.ReactElement
-    > = React.useRef<React.ReactElement>(null);
+  > = React.useRef<React.ReactElement>(null);
 
   /* (1) Como sabemos este codigo se ejecuta "cada vez" */
   let myThing: React.MutableRefObject<number> = React.useRef<number>(null);

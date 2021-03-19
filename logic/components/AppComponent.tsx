@@ -14,6 +14,8 @@ import { UseRefComponent } from "./UseRefComponent";
 import { RefsCallback } from "./RefsCallback.class";
 import { ForwardRef } from "./ForwardRef";
 
+import { RefFunctionComponent } from "./exercise/RefFunctionComponent";
+
 const mainDebugger: debug.Debugger = debug
   .debug("react")
   .extend("AppComponent");
@@ -62,8 +64,7 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
       <EventsComponent />
       <hr />
       <HooksComponent />
-      <hr />
-      */}
+      <hr />      
       <button onClick={() => setContador(contador + 1)}>
         Count Click!! {contador}
       </button>
@@ -75,6 +76,8 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
       <hr />
       <ForwardRef />
       <hr />
+      */}
+      <RefFunctionComponent />
     </div>
   );
 };
