@@ -10,6 +10,7 @@ import { StateComponent } from "./StateComponent.class";
 import { EventsComponent } from "./EventsComponent.class";
 import { HooksComponent } from "./HooksComponent";
 import { ExerciseHooksComponent } from "./ExerciseHooksComponent";
+import { CleanHookComponent } from "./CleanHookComponent";
 
 const mainDebugger: debug.Debugger = debug
   .debug("react")
@@ -38,12 +39,21 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
     React.Dispatch<string>
   ] = React.useState("A");
 
+  const [hideShow, setHideShow]: [
+    number,
+    React.Dispatch<number>
+  ] = React.useState(0);
+
   function propertyClickA(): void {
     setProperty("A");
   }
 
   function propertyClickB(): void {
     setProperty("B");
+  }
+
+  function hideShowClick(): void {
+    setHideShow(hideShow + 1);
   }
 
   return (
@@ -73,6 +83,11 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
       <button onClick={propertyClickB}>Set 'B'</button>
 
       <ExerciseHooksComponent theProperty={property} />
+      <hr />
+
+      <button onClick={hideShowClick}>Hide/Show</button>
+      {hideShow % 2 === 0 ? <CleanHookComponent /> : null}
+
       <hr />
     </div>
   );
