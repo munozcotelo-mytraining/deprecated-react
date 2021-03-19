@@ -9,6 +9,8 @@ import { ListComponent } from "./ListComponent";
 import { StateComponent } from "./StateComponent.class";
 import { EventsComponent } from "./EventsComponent.class";
 import { HooksComponent } from "./HooksComponent";
+import { RefComponent } from "./RefComponent.class";
+import { UseRefComponent } from "./UseRefComponent";
 
 const mainDebugger: debug.Debugger = debug
   .debug("react")
@@ -24,6 +26,11 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
 ) => {
   /* Body */
 
+  const [contador, setContador]: [
+    number,
+    React.Dispatch<number>
+  ] = React.useState<number>(100);
+
   mainDebugger("AppComponent function");
 
   const listNames: INameDTO[] = [
@@ -34,7 +41,7 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
 
   return (
     <div>
-      Hello compiler '{props.compiler}' and framework '{props.framework}' from
+      {/*Hello compiler '{props.compiler}' and framework '{props.framework}' from
       Function Component
       <hr />
       <ConditionalComponent
@@ -53,6 +60,14 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
       <EventsComponent />
       <hr />
       <HooksComponent />
+      <hr />
+      */}
+      <button onClick={() => setContador(contador + 1)}>
+        Count Click!! {contador}
+      </button>
+      <RefComponent />
+      <hr />
+      <UseRefComponent />
       <hr />
     </div>
   );
