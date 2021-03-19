@@ -12,6 +12,7 @@ import { HooksComponent } from "./HooksComponent";
 import { RefComponent } from "./RefComponent.class";
 import { UseRefComponent } from "./UseRefComponent";
 import { RefsCallback } from "./RefsCallback.class";
+import { ForwardRef } from "./ForwardRef";
 
 const mainDebugger: debug.Debugger = debug
   .debug("react")
@@ -71,6 +72,8 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
       <UseRefComponent />
       <hr />
       <RefsCallback />
+      <hr />
+      <ForwardRef />
       <hr />
     </div>
   );
