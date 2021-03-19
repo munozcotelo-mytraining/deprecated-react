@@ -11,6 +11,7 @@ import { EventsComponent } from "./EventsComponent.class";
 import { HooksComponent } from "./HooksComponent";
 import { RefComponent } from "./RefComponent.class";
 import { UseRefComponent } from "./UseRefComponent";
+import { RefsCallback } from "./RefsCallback.class";
 
 const mainDebugger: debug.Debugger = debug
   .debug("react")
@@ -68,6 +69,8 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
       <RefComponent />
       <hr />
       <UseRefComponent />
+      <hr />
+      <RefsCallback />
       <hr />
     </div>
   );
