@@ -13,6 +13,7 @@ import { RefComponent } from "./RefComponent.class";
 import { UseRefComponent } from "./UseRefComponent";
 import { RefsCallback } from "./RefsCallback.class";
 import { ForwardRef } from "./ForwardRef";
+import { FormComponent } from "./FormComponent";
 
 const mainDebugger: debug.Debugger = debug
   .debug("react")
@@ -63,7 +64,6 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
       <hr />
       <HooksComponent />
       <hr />
-      */}
       <button onClick={() => setContador(contador + 1)}>
         Count Click!! {contador}
       </button>
@@ -75,6 +75,8 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
       <hr />
       <ForwardRef />
       <hr />
+      */}
+      <FormComponent />
     </div>
   );
 };
