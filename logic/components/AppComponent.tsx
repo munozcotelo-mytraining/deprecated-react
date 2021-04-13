@@ -25,6 +25,11 @@ interface IAppComponentProps {
   framework?: string;
 }
 
+interface IDynContextDTO {
+  user : string;
+  userToggle : () => {};
+}
+
 const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
   props: IAppComponentProps
 ) => {
@@ -34,6 +39,23 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
     number,
     React.Dispatch<number>
   ] = React.useState<number>(100);
+
+  function alvaro() {
+    if ( dynContext === "first user value") {
+
+        setDynContext
+    }else {
+    
+    }
+  }
+
+  const [dynContext, setDynContext]: [
+    IDynContextDTO,
+    React.Dispatch<IDynContextDTO>
+  ] = React.useState<IDynContextDTO>({
+    user: "firt user value",
+    userToggle: () => { console.info("aalsj"); return "another value" },
+    });
 
   mainDebugger("AppComponent function");
 
@@ -78,7 +100,8 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
       <hr />
       <FormComponent />
       */}
-      <FragmentComponent />
+      <FragmentComponent />      
+
     </div>
   );
 };
