@@ -2,6 +2,11 @@ import * as debug from "debug";
 import * as React from "react";
 import * as uuid from "uuid";
 
+import { Switch }    from "react-router-dom";
+import { Route }     from "react-router-dom";
+import { Link }     from "react-router-dom";
+
+
 import { INameDTO } from "./../../dto/INameDTO.class";
 
 import { ConditionalComponent } from "./ConditionalComponent";
@@ -15,6 +20,9 @@ import { RefsCallback } from "./RefsCallback.class";
 import { ForwardRef } from "./ForwardRef";
 import { FormComponent } from "./FormComponent";
 import { FragmentComponent } from "./FragmentComponent";
+
+import { Ruta1Component } from "./routes/Ruta1Component";
+import { Ruta2Component } from "./routes/Ruta2Component";
 
 const mainDebugger: debug.Debugger = debug
   .debug("react")
@@ -98,9 +106,32 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
       <hr />
       <ForwardRef />
       <hr />
-      <FormComponent />
-      */}
+      <FormComponent />      
       <FragmentComponent />      
+      */}
+
+
+      <div>
+        <h2>Links</h2>
+        <ul>
+        <li><Link to="/ruta1/bla">ruta1/bla (enruta)</Link></li>
+        <li><Link to="/ruta1/:aParam">ruta1/hi (enruta)</Link></li>
+        <li><Link to="/ruta1">ruta1 (enruta)</Link></li>
+        <li><Link to="/ruta2/bla">ruta2/bla (no enruta)</Link></li>
+        <li><Link to="/ruta2">ruta2 (enruta)</Link></li>
+        </ul>
+
+      </div>
+
+      <Switch>
+
+          <Route path="/ruta1">
+            <Ruta1Component/>
+          </Route>
+
+          <Route exact path="/ruta2" component={Ruta2Component} />
+
+      </Switch>
 
     </div>
   );

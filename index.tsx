@@ -7,6 +7,10 @@ import * as debug from "debug";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
+import { BrowserRouter as Router } from "react-router-dom";
+//import { HashRouter as Router } from "react-router-dom";
+
+
 /* Comment/Uncomment to use class or functional component */
 import { AppComponent } from "./logic/components/AppComponent.class";
 import { AppComponent as AppComponentFunction } from "./logic/components/AppComponent";
@@ -20,8 +24,8 @@ mainDebugger("Start app");
  * y ahi inyectamos
  */
 ReactDOM.render(
-  //<AppComponentFunction compiler="online" framework="REACT" />,
-  <AppComponent compiler="online" framework="REACT" />,
+  <Router><AppComponentFunction compiler="online" framework="REACT" /></Router>,
+  //<Router><AppComponent compiler="online" framework="REACT" /></Router>,
   document.getElementById("root")
 );
 
