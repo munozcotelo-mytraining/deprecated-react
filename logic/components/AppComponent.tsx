@@ -25,6 +25,8 @@ import { LinksComponent } from "./routes/LinksComponent";
 import { Ruta1Component } from "./routes/Ruta1Component";
 import { Ruta2Component } from "./routes/Ruta2Component";
 
+import { ReduxComponent } from "./ReduxComponent";
+
 
 const mainDebugger: debug.Debugger = debug
   .debug("react")
@@ -104,6 +106,7 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
         <li><Link to="/fragmentos">Fragmentos</Link></li>
         <li><Link to="/router">React router</Link></li>
         <li><Link to="/advanced-hooks">Advanced Hooks</Link></li>
+        <li><Link to="/redux">Redux</Link></li>
         </ul>
 
       </div>
@@ -154,6 +157,10 @@ const AppComponent: (props: IAppComponentProps) => React.ReactElement = (
           <Route exact path="/fragmentos" component={FragmentComponent} />
           <Route exact path="/router" component={LinksComponent} />
           <Route exact path="/advanced-hooks" component={AdvancedHooksComponent} />
+          
+          <Route exact path="/redux">
+            <ReduxComponent />
+          </Route>
 
       </Switch>
 
