@@ -1,6 +1,6 @@
-import { IStateDTO } from './../IDTOS.class';
 import { todosReducer } from './todosReducer';
 import { visibilityFilterReducer } from './visibilityFilterReducer';
+import { asyncReducer } from './asyncReducer';
 
 import { combineReducers } from 'redux';
 
@@ -18,7 +18,8 @@ function appReducer(
 
 const appReducer = combineReducers({
   todos: todosReducer,
-  visibilityFilter: visibilityFilterReducer
+  visibilityFilter: visibilityFilterReducer,
+  async: asyncReducer
 });
 
 export { appReducer };

@@ -27,7 +27,6 @@ import { Ruta2Component } from "./routes/Ruta2Component";
 
 import { ReduxComponent } from "./ReduxComponent";
 
-
 const mainDebugger: debug.Debugger = debug
   .debug("react")
   .extend("AppComponent");
