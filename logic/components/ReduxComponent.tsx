@@ -26,13 +26,18 @@ const ReduxComponent: (props: Record<string, unknown>) => React.ReactElement = (
     React.Dispatch<string[]>
   ] = React.useState<string[]>(appStore.getState().async.elements);
 
+  const [fetching, setFetching]: [
+    boolean,
+    React.Dispatch<boolean>
+  ] = React.useState<boolean>(appStore.getState().async.fetching);
+
   React.useEffect(() => {
 
     const unsubscribe : Redux.Unsubscribe = appStore.subscribe( () => {
     
       setTodos( appStore.getState().todos );
       setAsyncElements( appStore.getState().async.elements );
-
+      setFetching(appStore.getState().async.fetching);
     
     } );
   
@@ -70,6 +75,7 @@ const ReduxComponent: (props: Record<string, unknown>) => React.ReactElement = (
       </ul>
       <button onClick={add}>Add TODO</button>
       <hr/>
+      fetching : { fetching.toString() }
       <ul>
         {asyncElements.map((element: string[], index : number ) => {
           return (
