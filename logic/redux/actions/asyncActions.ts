@@ -35,7 +35,6 @@ function setError(error: boolean) {
 
 function getElements() {
   return dispatch => {
-    console.info(dispatch);
     dispatch(setLoading(true));
     dispatch(setError(false));
     setTimeout(() => {
